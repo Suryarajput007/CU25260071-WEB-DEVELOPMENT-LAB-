@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - BookWorld</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><a class="logo" href="index.html"><img src="images/logo.svg" width="40" alt="logo">BookWorld</a>
+<nav><a href="index.html">Home</a><a href="catalogue.html">Catalogue</a><a href="register.html">Register</a><a href="login.html">Login</a>
+<a href="cart.html">Cart (<span id="cartCount">0</span>)</a><a href="contact.html">Contact Us</a></nav></header>
+<main>
+<div class="formbox"><h2>Login</h2>
+<form id="loginForm" onsubmit="return validateLogin()">
+<label>Email</label><input type="email" name="email" required>
+<label>Password</label><input type="password" name="pass" required>
+<div class="inl"><input type="checkbox"><label>Remember me</label></div>
+<input type="submit" value="Login"><input type="reset" value="Reset">
+<p>New user? <a href="register.html">Register here</a></p></form></div>
+</main>
+<footer>&copy; 2026 BookWorld Online Book Store</footer>
+<script src="js/books.js"></script><script src="js/main.js"></script>
+</body></html>

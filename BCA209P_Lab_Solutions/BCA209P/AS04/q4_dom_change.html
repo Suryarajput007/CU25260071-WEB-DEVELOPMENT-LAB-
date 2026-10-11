@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q4 - DOM Changes</title>
+<style>body{font-family:Arial;text-align:center;padding:40px;transition:.4s}</style></head>
+<body id="page">
+<h1 id="heading">Original Heading</h1>
+<p id="para">This is the original paragraph.</p>
+<button onclick="changeAll()">Click to Change</button>
+<script>
+var colors = ["#ffe0b2", "#c8e6c9", "#bbdefb", "#f8bbd0"];
+var count = 0;
+// Changes heading text, paragraph text and background colour
+function changeAll() {
+  document.getElementById("heading").innerHTML = "Heading Changed! (" + (++count) + ")";
+  document.getElementById("para").textContent = "The paragraph content was changed using the DOM.";
+  document.body.style.backgroundColor = colors[count % colors.length];
+}
+</script></body></html>

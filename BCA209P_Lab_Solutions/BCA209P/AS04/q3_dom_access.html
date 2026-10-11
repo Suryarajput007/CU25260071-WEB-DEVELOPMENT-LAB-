@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q3 - DOM Access Methods</title>
+<style>body{font-family:Arial;margin:30px} .box{background:#eef;padding:10px;margin-top:10px}</style></head>
+<body>
+<h2 id="title">Student List</h2>
+<ul id="studentList">
+  <li class="student">101 - Aman Sharma</li>
+  <li class="student">102 - Riya Verma</li>
+  <li class="student">103 - Karan Singh</li>
+  <li class="student">104 - Neha Gupta</li>
+  <li class="student">105 - Rahul Mehta</li>
+</ul>
+<button onclick="byId()">getElementById()</button>
+<button onclick="byTag()">getElementsByTagName()</button>
+<button onclick="byQuery()">querySelector()</button>
+<div class="box" id="output">Click a button to see the output.</div>
+<script>
+// getElementById(): returns ONE element having the given id
+function byId() {
+  var list = document.getElementById("studentList");
+  document.getElementById("output").innerHTML = "Total students in list: " + list.children.length;
+}
+// getElementsByTagName(): returns a collection of all matching tags
+function byTag() {
+  var items = document.getElementsByTagName("li");
+  var text = "";
+  for (var i = 0; i < items.length; i++) text += items[i].innerText + "<br>";
+  document.getElementById("output").innerHTML = text;
+}
+// querySelector(): returns the FIRST element matching a CSS selector
+function byQuery() {
+  var first = document.querySelector("#studentList .student");
+  document.getElementById("output").innerHTML = "First student: " + first.innerText;
+}
+</script></body></html>

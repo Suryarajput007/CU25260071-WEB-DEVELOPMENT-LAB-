@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Q1 - Student Registration (CSS)</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="form-box">
+  <h2>Student Registration Form</h2>
+  <form action="#" method="post">
+    <label>Full Name</label><input type="text" name="name" required>
+    <label>Email</label><input type="email" name="email" required>
+    <label>Gender</label>
+    <div class="inline"><input type="radio" name="gender" value="M" checked><label>Male</label>
+    <input type="radio" name="gender" value="F"><label>Female</label></div>
+    <label>Course</label>
+    <select name="course"><option>BCA</option><option>BBA</option><option>B.Com</option></select>
+    <label>Hobbies</label>
+    <div class="inline"><input type="checkbox"><label>Reading</label>
+    <input type="checkbox"><label>Music</label><input type="checkbox"><label>Sports</label></div>
+    <label>Address</label><textarea rows="4" name="address"></textarea>
+    <input type="submit" value="Submit"><input type="reset" value="Reset">
+  </form>
+</div>
+</body>
+</html>

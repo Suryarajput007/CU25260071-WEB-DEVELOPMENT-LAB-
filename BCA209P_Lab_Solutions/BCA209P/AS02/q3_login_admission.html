@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Q3 - Login and Admission Form</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<!-- LOGIN FORM -->
+<div class="form-box">
+  <h2>Login</h2>
+  <form action="#" method="post">
+    <label>Username</label><input type="text" name="user" required>
+    <label>Password</label><input type="password" name="pass" required>
+    <input type="submit" value="Login"><input type="reset" value="Clear">
+  </form>
+</div>
+<!-- ADMISSION FORM -->
+<div class="form-box">
+  <h2>College Admission Form</h2>
+  <form action="#" method="post">
+    <label>Student Name</label><input type="text" required>
+    <label>Father's Name</label><input type="text" required>
+    <label>Date of Birth</label><input type="date">
+    <label>Email</label><input type="email">
+    <label>Course Applied</label>
+    <select><option>BCA</option><option>BBA</option><option>B.Com</option></select>
+    <label>12th Percentage</label><input type="number" min="0" max="100" step="0.01">
+    <label>Category</label>
+    <div class="inline"><input type="radio" name="cat"><label>General</label>
+    <input type="radio" name="cat"><label>OBC</label><input type="radio" name="cat"><label>SC/ST</label></div>
+    <label>Address</label><textarea rows="3"></textarea>
+    <div class="inline"><input type="checkbox" required><label>I declare the details are correct</label></div>
+    <input type="submit" value="Apply"><input type="reset" value="Reset">
+  </form>
+</div>
+</body>
+</html>

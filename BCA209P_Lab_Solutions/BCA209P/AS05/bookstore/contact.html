@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us - BookWorld</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><a class="logo" href="index.html"><img src="images/logo.svg" width="40" alt="logo">BookWorld</a>
+<nav><a href="index.html">Home</a><a href="catalogue.html">Catalogue</a><a href="register.html">Register</a><a href="login.html">Login</a>
+<a href="cart.html">Cart (<span id="cartCount">0</span>)</a><a href="contact.html">Contact Us</a></nav></header>
+<main>
+<h2>Contact Us</h2>
+<p><b>Address:</b> 25 Rajpur Road, Dehradun, Uttarakhand - 248001<br><b>Email:</b> support@bookworld.com<br><b>Phone:</b> +91 98765 43210</p>
+<div class="formbox"><h3>Feedback Form</h3><form id="contactForm" onsubmit="return validateContact()">
+<label>Name</label><input type="text" name="cname"><label>Email</label><input type="email" name="cemail">
+<label>Subject</label><select><option>Feedback</option><option>Order Query</option><option>Complaint</option></select>
+<label>Message</label><textarea name="msg" rows="4"></textarea><input type="submit" value="Send"><input type="reset"></form></div>
+</main>
+<footer>&copy; 2026 BookWorld Online Book Store</footer>
+<script src="js/books.js"></script><script src="js/main.js"></script>
+</body></html>

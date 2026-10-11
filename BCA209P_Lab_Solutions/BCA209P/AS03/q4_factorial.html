@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q4 - Factorial</title></head>
+<body>
+<h2>Factorial Calculator</h2>
+Enter a number: <input type="number" id="num">
+<button onclick="showFactorial()">Find Factorial</button>
+<h3 id="res"></h3>
+<script>
+// Function that calculates factorial using a loop
+function factorial(n) {
+  var f = 1;
+  for (var i = 2; i <= n; i++) f = f * i;
+  return f;
+}
+function showFactorial() {
+  var n = parseInt(document.getElementById("num").value);
+  var res = document.getElementById("res");
+  if (isNaN(n) || n < 0) { res.innerHTML = "Enter a non-negative integer."; return; }
+  if (n > 170) { res.innerHTML = "Number too large (max 170)."; return; }
+  res.innerHTML = n + "! = " + factorial(n);
+}
+</script></body></html>

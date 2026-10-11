@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABC College</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><img src="logo.svg" alt="logo" height="50"><h1>ABC College of Technology</h1>
+<nav><a href="#home">Home</a><a href="#about">About Us</a><a href="#courses">Courses</a>
+<a href="#faculty">Faculty</a><a href="#gallery">Gallery</a><a href="#contact">Contact Us</a></nav></header>
+
+<section id="home" class="hero"><h2>Welcome to ABC College</h2><p id="clock"></p></section>
+<section id="about"><h2>About Us</h2><p>Founded in 1995, we provide quality education in computing, management and commerce.</p></section>
+<section id="courses"><h2>Courses</h2>
+  <div class="grid"><div class="box">BCA<br><small>3 Years</small></div><div class="box">BBA<br><small>3 Years</small></div>
+  <div class="box">B.Com<br><small>3 Years</small></div><div class="box">MCA<br><small>2 Years</small></div></div></section>
+<section id="faculty"><h2>Faculty</h2>
+  <table><tr><th>Name</th><th>Department</th><th>Qualification</th></tr>
+  <tr><td>Dr. A. Kumar</td><td>Computer Science</td><td>Ph.D.</td></tr>
+  <tr><td>Ms. S. Rawat</td><td>Management</td><td>MBA, NET</td></tr>
+  <tr><td>Mr. P. Joshi</td><td>Commerce</td><td>M.Com</td></tr></table></section>
+<section id="gallery"><h2>Gallery <small>(click an image to enlarge)</small></h2>
+  <img src="course.svg" onclick="zoom(this)" alt="Lab"><img src="nature.svg" onclick="zoom(this)" alt="Campus"><img src="logo.svg" onclick="zoom(this)" alt="Logo"></section>
+<section id="contact"><h2>Contact Us</h2><p>Dehradun, Uttarakhand | info@abccollege.edu | 0135-1234567</p></section>
+<footer>&copy; 2026 ABC College</footer>
+<div id="modal" onclick="this.style.display='none'"><img id="big" alt=""></div>
+<script src="script.js"></script>
+</body></html>

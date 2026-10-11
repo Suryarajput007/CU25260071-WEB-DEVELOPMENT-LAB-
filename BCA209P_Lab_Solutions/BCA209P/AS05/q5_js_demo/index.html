@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q5 - JavaScript Functionality</title>
+<style>
+ body{font-family:Arial;max-width:600px;margin:30px auto;text-align:center}
+ .sec{border:1px solid #1a3c6e;border-radius:8px;padding:15px;margin:15px 0}
+ button{background:#1a3c6e;color:#fff;border:0;padding:8px 18px;border-radius:5px;cursor:pointer;margin:3px}
+ .err{color:red}
+</style></head>
+<body>
+<h1>JavaScript Features</h1>
+<div class="sec"><h3>1. Button Click</h3><button onclick="alert('Button clicked!')">Click Me</button></div>
+<div class="sec"><h3>2. Image Change</h3><img id="pic" src="img1.svg" width="200" alt="demo"><br>
+  <button onclick="changeImage()">Change Image</button></div>
+<div class="sec"><h3>3. Text Change</h3><p id="txt">Hello, World!</p><button onclick="changeText()">Change Text</button></div>
+<div class="sec"><h3>4. Date &amp; Time</h3><p id="dt"></p></div>
+<div class="sec"><h3>5. Form Validation</h3>
+  <input id="em" placeholder="Enter email"><button onclick="checkEmail()">Validate</button><p id="vmsg"></p></div>
+<script>
+var imgs = ["img1.svg", "img2.svg"], k = 0;
+function changeImage() { k = (k + 1) % imgs.length; document.getElementById("pic").src = imgs[k]; }
+function changeText() { document.getElementById("txt").textContent = "Text changed using JavaScript!"; }
+setInterval(function () { document.getElementById("dt").textContent = new Date().toLocaleString(); }, 1000);
+function checkEmail() {
+  var v = document.getElementById("em").value, m = document.getElementById("vmsg");
+  var ok = /^\S+@\S+\.\S+$/.test(v);
+  m.className = ok ? "" : "err"; m.textContent = ok ? "Valid email!" : "Invalid email address.";
+}
+</script></body></html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Q4 - JavaScript Calculator</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="form-box">
+  <h2>Simple Calculator</h2>
+  <label>First Number</label><input type="number" id="n1">
+  <label>Second Number</label><input type="number" id="n2">
+  <button onclick="calculate('+')">Add</button>
+  <button onclick="calculate('-')">Subtract</button>
+  <button onclick="calculate('*')">Multiply</button>
+  <button onclick="calculate('/')">Divide</button>
+  <h3 id="result"></h3>
+</div>
+<script>
+// Reads both numbers, performs the operation and shows the result
+function calculate(op) {
+  var a = parseFloat(document.getElementById("n1").value);
+  var b = parseFloat(document.getElementById("n2").value);
+  var out = document.getElementById("result");
+  if (isNaN(a) || isNaN(b)) { out.innerHTML = "Please enter both numbers."; return; }
+  var r;
+  switch (op) {
+    case '+': r = a + b; break;
+    case '-': r = a - b; break;
+    case '*': r = a * b; break;
+    case '/':
+      if (b === 0) { out.innerHTML = "Cannot divide by zero!"; return; }
+      r = a / b; break;
+  }
+  out.innerHTML = "Result: " + r;
+}
+</script>
+</body>
+</html>

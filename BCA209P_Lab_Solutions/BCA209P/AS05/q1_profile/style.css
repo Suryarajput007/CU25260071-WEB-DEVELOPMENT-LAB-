@@ -1,0 +1,10 @@
+body{font-family:Arial;background:#e3f2fd;margin:0;padding:20px;transition:.3s}
+body.dark{background:#212121;color:#eee}
+.card{max-width:600px;margin:auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.2);text-align:center}
+body.dark .card{background:#333}
+.photo{width:150px;height:100px;border-radius:10px}
+h2{color:#1a3c6e;border-bottom:2px solid #1a3c6e;padding-bottom:4px}
+body.dark h2{color:#90caf9}
+ul{text-align:left;display:inline-block}
+.tag{background:#1a3c6e;color:#fff;padding:5px 12px;border-radius:15px;margin:3px;display:inline-block}
+button{background:#1a3c6e;color:#fff;border:0;padding:10px 20px;border-radius:6px;cursor:pointer;margin-top:15px}

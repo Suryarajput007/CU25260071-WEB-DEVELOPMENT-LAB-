@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book><bookId>B001</bookId><title>Let Us C</title><author>Yashavant Kanetkar</author><publisher>BPB Publications</publisher><price>350</price><category>Programming</category></book>
+  <book><bookId>B002</bookId><title>Learning Web Design</title><author>Jennifer Robbins</author><publisher>O'Reilly</publisher><price>799</price><category>Web</category></book>
+  <book><bookId>B003</bookId><title>Database System Concepts</title><author>Silberschatz</author><publisher>McGraw Hill</publisher><price>650</price><category>Database</category></book>
+  <book><bookId>B004</bookId><title>Java: The Complete Reference</title><author>Herbert Schildt</author><publisher>McGraw Hill</publisher><price>720</price><category>Programming</category></book>
+  <book><bookId>B005</bookId><title>JavaScript: The Good Parts</title><author>Douglas Crockford</author><publisher>O'Reilly</publisher><price>450</price><category>Web</category></book>
+</books>

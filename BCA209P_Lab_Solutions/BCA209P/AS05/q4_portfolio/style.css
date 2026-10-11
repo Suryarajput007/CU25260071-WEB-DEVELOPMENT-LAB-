@@ -1,0 +1,8 @@
+body{margin:0;font-family:Arial;scroll-behavior:smooth}
+nav{position:sticky;top:0;background:#263238;color:#fff;padding:14px 5%;display:flex;justify-content:space-between;flex-wrap:wrap}
+nav a{color:#fff;margin-left:15px;text-decoration:none} nav a:hover{color:#80cbc4}
+section{padding:50px 8%} section:nth-child(even){background:#eceff1}
+.hero{background:#00796b;color:#fff;text-align:center;padding:90px 5%!important}
+.bar{background:#ccc;height:14px;border-radius:7px} .bar div{background:#00796b;height:100%;border-radius:7px}
+.grid{display:flex;gap:15px;flex-wrap:wrap} .p{background:#263238;color:#fff;padding:40px 30px;border-radius:8px}
+input,textarea{width:100%;max-width:400px;padding:8px;margin:5px 0} button{background:#00796b;color:#fff;border:0;padding:10px 25px;cursor:pointer}

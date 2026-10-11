@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q5 - Registration Validation</title>
+<style>
+ body{font-family:Arial;margin:30px} input{padding:6px;margin:4px 0;width:250px}
+ .err{color:red;font-size:13px}
+</style></head>
+<body>
+<h2>Student Registration Form</h2>
+<form id="f" onsubmit="return validate()">
+  Name:<br><input type="text" id="name"><div class="err" id="e1"></div>
+  Email:<br><input type="text" id="email"><div class="err" id="e2"></div>
+  Mobile:<br><input type="text" id="mobile"><div class="err" id="e3"></div>
+  Password:<br><input type="password" id="pass"><div class="err" id="e4"></div><br>
+  <input type="submit" value="Submit" style="width:auto"> <input type="reset" style="width:auto">
+</form>
+<script>
+function validate() {
+  var valid = true;
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var mobile = document.getElementById("mobile").value.trim();
+  var pass = document.getElementById("pass").value;
+
+  // Clear old messages
+  ["e1","e2","e3","e4"].forEach(function(id){ document.getElementById(id).innerHTML = ""; });
+
+  if (name === "" || !/^[A-Za-z ]+$/.test(name)) { document.getElementById("e1").innerHTML = "Enter a valid name (letters only)."; valid = false; }
+  if (!/^\S+@\S+\.\S+$/.test(email)) { document.getElementById("e2").innerHTML = "Enter a valid email."; valid = false; }
+  if (!/^[0-9]{10}$/.test(mobile)) { document.getElementById("e3").innerHTML = "Mobile must be exactly 10 digits."; valid = false; }
+  if (pass.length < 6) { document.getElementById("e4").innerHTML = "Password must be at least 6 characters."; valid = false; }
+
+  if (valid) alert("Registration successful!");
+  return false;  // demo only; use 'return valid' to actually submit
+}
+</script></body></html>

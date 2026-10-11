@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Q5 - JavaScript Validation</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="form-box">
+  <h2>Registration (Validated)</h2>
+  <form id="regForm" onsubmit="return validateForm()">
+    <label>Name</label><input type="text" id="name"><span class="error" id="eName"></span>
+    <label>Email</label><input type="text" id="email"><span class="error" id="eEmail"></span>
+    <label>Mobile Number</label><input type="text" id="mobile"><span class="error" id="eMobile"></span>
+    <label>Password</label><input type="password" id="pass"><span class="error" id="ePass"></span>
+    <label>Age</label><input type="text" id="age"><span class="error" id="eAge"></span>
+    <input type="submit" value="Register"><input type="reset" value="Reset">
+    <p class="success" id="msg"></p>
+  </form>
+</div>
+<script>
+// Helper: show an error message under a field
+function setError(id, text) { document.getElementById(id).innerHTML = text; return text === ""; }
+
+function validateForm() {
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var mobile = document.getElementById("mobile").value.trim();
+  var pass = document.getElementById("pass").value;
+  var age = document.getElementById("age").value.trim();
+
+  var ok = true;
+  ok = setError("eName", /^[A-Za-z ]{3,}$/.test(name) ? "" : "Name must have at least 3 letters (alphabets only).") && ok;
+  ok = setError("eEmail", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "" : "Enter a valid email address.") && ok;
+  ok = setError("eMobile", /^[6-9][0-9]{9}$/.test(mobile) ? "" : "Mobile must be 10 digits starting with 6-9.") && ok;
+  ok = setError("ePass", /^(?=.*[A-Za-z])(?=.*\d).{6,}$/.test(pass) ? "" : "Password: min 6 chars with letters and digits.") && ok;
+  ok = setError("eAge", (age !== "" && !isNaN(age) && age >= 17 && age <= 60) ? "" : "Age must be a number between 17 and 60.") && ok;
+
+  document.getElementById("msg").innerHTML = ok ? "Form validated successfully!" : "";
+  return false; // stay on page for demo; change to 'return ok' to really submit
+}
+</script>
+</body>
+</html>

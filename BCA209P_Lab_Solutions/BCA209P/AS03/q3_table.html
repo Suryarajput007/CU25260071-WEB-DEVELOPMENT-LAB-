@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q3 - Multiplication Table</title></head>
+<body>
+<h2>Multiplication Table</h2>
+Enter a number: <input type="number" id="num">
+<button onclick="printTable()">Show Table</button>
+<pre id="out" style="font-size:18px"></pre>
+<script>
+function printTable() {
+  var n = parseInt(document.getElementById("num").value);
+  if (isNaN(n)) { document.getElementById("out").innerHTML = "Please enter a number."; return; }
+  var text = "";
+  for (var i = 1; i <= 10; i++) {          // loop from 1 to 10
+    text += n + " x " + i + " = " + (n * i) + "\n";
+  }
+  document.getElementById("out").innerText = text;
+}
+</script></body></html>

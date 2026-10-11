@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Q5 - Read XML and Display</title>
+<style>
+ body{font-family:Arial;margin:30px} table{border-collapse:collapse;width:80%}
+ th,td{border:1px solid #444;padding:8px} th{background:#1a3c6e;color:#fff}
+</style></head>
+<body>
+<h2>Student Records (loaded from students.xml)</h2>
+<div id="msg"></div>
+<table id="tbl">
+  <thead><tr><th>ID</th><th>Name</th><th>Course</th><th>Semester</th><th>Email</th><th>Marks</th></tr></thead>
+  <tbody></tbody>
+</table>
+<script>
+// Built-in copy of the XML. It is used when the browser blocks reading
+// students.xml from file:// (run with "python -m http.server" to load the real file).
+var fallbackXML = '<students><student><id>101</id><name>Aman Sharma</name><course>BCA</course><semester>3</semester><email>aman@example.com</email><marks>85</marks></student><student><id>102</id><name>Riya Verma</name><course>BCA</course><semester>3</semester><email>riya@example.com</email><marks>91</marks></student></students>';
+
+function showStudents(xmlText) {
+  var xml = new DOMParser().parseFromString(xmlText, "text/xml");   // text -> DOM
+  var students = xml.getElementsByTagName("student");
+  var body = document.querySelector("#tbl tbody");
+  body.innerHTML = "";
+  for (var i = 0; i < students.length; i++) {
+    var s = students[i], row = body.insertRow();
+    ["id","name","course","semester","email","marks"].forEach(function (tag) {
+      row.insertCell().textContent = s.getElementsByTagName(tag)[0].textContent;
+    });
+  }
+}
+fetch("students.xml").then(function (r) { return r.text(); }).then(showStudents)
+  .catch(function () {
+    document.getElementById("msg").innerHTML = "<i>Could not load students.xml (file:// restriction) - showing built-in sample data.</i>";
+    showStudents(fallbackXML);
+  });
+</script></body></html>
